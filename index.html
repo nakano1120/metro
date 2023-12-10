@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css"></link>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/ui-lightness/jquery-ui.css">
+    <link rel="stylesheet" href="bootstrap-responsive.css"></link>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/ui-lightness/jquery-ui.css">
+    <link rel="stylesheet" href="demo.css"></link>
+    <style>
+        img {
+            width:70%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="roulette_container" >
+        <div class="roulette" style="display:none;">
+            <img src="hanzomon.png"/>
+            <img src="hibiya.png"/>
+            <img src="fukutoshin.png"/>
+            <img src="chiyoda.png"/>
+            <img src="yurakucho.png"/>
+            <img src="marunouchi.png"/>
+            <img src="marunouchi_b.png"/>
+            <img src="asakusa.png"/>
+            <img src="oedo.png"/>
+            <img src="mita.png"/>
+            <img src="namboku.png"/>
+            <img src="tozai.png"/>
+            <img src="ginza.png"/>
+        </div>
+    </div>
+    <div class="btn_container">
+        <p>
+        <button class="btn btn-large btn-primary start"> START </button>
+        <button class="stop btn-large btn btn-warning" onclick="GetRandomNumber();"> STOP </button>
+        </p>
+    </div>	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+    <script src="roulette.js"></script>
+    <script>
+        jQuery(function(){    
+        // initialize!
+            var option = {
+                speed : 20,
+                duration : 3,
+            }
+            $('div.roulette').roulette(option);	
+
+            // START!
+            $('.start').click(function(){
+                $('div.roulette').roulette('start');	
+            });
+
+            // STOP!
+            $('.stop').click(function(){
+                $('div.roulette').roulette('stop');	
+            });
+        });
+    </script>
+</body>
+</html>
